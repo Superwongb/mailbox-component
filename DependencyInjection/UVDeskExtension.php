@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\DependencyInjection;
+namespace Harryn\Jacobn\MailboxBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -30,16 +30,16 @@ class UVDeskExtension extends Extension
             switch ($param) {
                 case 'emails':
                     foreach ($value as $field => $fieldValue) {
-                        $container->setParameter("uvdesk.emails.$field", $fieldValue);
+                        $container->setParameter("jacobn.emails.$field", $fieldValue);
                     }
                     break;
                 case 'mailboxes':
-                    $container->setParameter("uvdesk.mailboxes", array_keys($value));
+                    $container->setParameter("jacobn.mailboxes", array_keys($value));
 
                     foreach ($value as $mailboxId => $mailboxDetails) {
                         $mailboxDetails['email'] = $mailboxDetails['imap_server']['username'];
                         
-                        $container->setParameter("uvdesk.mailboxes.$mailboxId", $mailboxDetails);
+                        $container->setParameter("jacobn.mailboxes.$mailboxId", $mailboxDetails);
                     }
                     break;
                 default:

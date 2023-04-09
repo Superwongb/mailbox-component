@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Controller;
+namespace Harryn\Jacobn\MailboxBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Webkul\UVDesk\MailboxBundle\Utils\MailboxConfiguration;
-use Webkul\UVDesk\MailboxBundle\Services\MailboxService;
+use Harryn\Jacobn\MailboxBundle\Utils\MailboxConfiguration;
+use Harryn\Jacobn\MailboxBundle\Services\MailboxService;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 

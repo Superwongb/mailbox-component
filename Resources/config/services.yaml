@@ -4,24 +4,24 @@ services:
         autoconfigure: true
         public: false
     
-    Webkul\UVDesk\MailboxBundle\:
+    Harryn\Jacobn\MailboxBundle\:
         resource: '../../*'
         exclude: '../../{DependencyInjection,Entity,Package,Templates,Migrations,Tests}'
     
-    Webkul\UVDesk\MailboxBundle\Controller\:
+    Harryn\Jacobn\MailboxBundle\Controller\:
         resource: '../../Controller/*'
         tags: ['controller.service_arguments']
     
-    Webkul\UVDesk\MailboxBundle\Console\:
+    Harryn\Jacobn\MailboxBundle\Console\:
         resource: '../../Console/*'
         exclude: '../../Console/{UTF8Symbol.php,ANSIEscapeSequence.php}'
     
-    Webkul\UVDesk\MailboxBundle\EventListener\Swiftmailer:
+    Harryn\Jacobn\MailboxBundle\EventListener\Swiftmailer:
         tags:
-            - { name: uvdesk.event_listener, event: swiftmailer.configuration.updated, method: onSwiftMailerConfigurationUpdated }
-            - { name: uvdesk.event_listener, event: swiftmailer.configuration.removed, method: onSwiftMailerConfigurationRemoved }
+            - { name: jacobn.event_listener, event: swiftmailer.configuration.updated, method: onSwiftMailerConfigurationUpdated }
+            - { name: jacobn.event_listener, event: swiftmailer.configuration.removed, method: onSwiftMailerConfigurationRemoved }
     
     # Public aliases
-    uvdesk.mailbox:
+    jacobn.mailbox:
         public: true
-        class: Webkul\UVDesk\MailboxBundle\Services\MailboxService
+        class: Harryn\Jacobn\MailboxBundle\Services\MailboxService

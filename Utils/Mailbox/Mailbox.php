@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Utils\Mailbox;
+namespace Harryn\Jacobn\MailboxBundle\Utils\Mailbox;
 
-use Webkul\UVDesk\CoreFrameworkBundle\Utils\TokenGenerator;
-use Webkul\UVDesk\MailboxBundle\Utils\Imap\ConfigurationInterface as ImapConfiguration;
-use Webkul\UVDesk\CoreFrameworkBundle\Utils\SwiftMailer\BaseConfiguration as SwiftMailerConfiguration;
+use Harryn\Jacobn\CoreFrameworkBundle\Utils\TokenGenerator;
+use Harryn\Jacobn\MailboxBundle\Utils\Imap\ConfigurationInterface as ImapConfiguration;
+use Harryn\Jacobn\CoreFrameworkBundle\Utils\SwiftMailer\BaseConfiguration as SwiftMailerConfiguration;
 
 class Mailbox
 {

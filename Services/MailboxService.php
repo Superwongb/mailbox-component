@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Services;
+namespace Harryn\Jacobn\MailboxBundle\Services;
 
 use PhpMimeMailParser\Parser;
 use Symfony\Component\Yaml\Yaml;
@@ -8,20 +8,20 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Webkul\UVDesk\CoreFrameworkBundle\Entity\User;
+use Harryn\Jacobn\CoreFrameworkBundle\Entity\User;
 use Symfony\Component\EventDispatcher\GenericEvent;
-use Webkul\UVDesk\CoreFrameworkBundle\Entity\Ticket;
-use Webkul\UVDesk\CoreFrameworkBundle\Entity\Thread;
-use Webkul\UVDesk\CoreFrameworkBundle\Entity\Website;
-use Webkul\UVDesk\MailboxBundle\Utils\Mailbox\Mailbox;
-use Webkul\UVDesk\CoreFrameworkBundle\Utils\HTMLFilter;
-use Webkul\UVDesk\CoreFrameworkBundle\Entity\SupportRole;
-use Webkul\UVDesk\CoreFrameworkBundle\Utils\TokenGenerator;
-use Webkul\UVDesk\MailboxBundle\Utils\MailboxConfiguration;
+use Harryn\Jacobn\CoreFrameworkBundle\Entity\Ticket;
+use Harryn\Jacobn\CoreFrameworkBundle\Entity\Thread;
+use Harryn\Jacobn\CoreFrameworkBundle\Entity\Website;
+use Harryn\Jacobn\MailboxBundle\Utils\Mailbox\Mailbox;
+use Harryn\Jacobn\CoreFrameworkBundle\Utils\HTMLFilter;
+use Harryn\Jacobn\CoreFrameworkBundle\Entity\SupportRole;
+use Harryn\Jacobn\CoreFrameworkBundle\Utils\TokenGenerator;
+use Harryn\Jacobn\MailboxBundle\Utils\MailboxConfiguration;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Webkul\UVDesk\CoreFrameworkBundle\Workflow\Events as CoreWorkflowEvents;
-use Webkul\UVDesk\MailboxBundle\Utils\Imap\Configuration as ImapConfiguration;
-use Webkul\UVDesk\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
+use Harryn\Jacobn\CoreFrameworkBundle\Workflow\Events as CoreWorkflowEvents;
+use Harryn\Jacobn\MailboxBundle\Utils\Imap\Configuration as ImapConfiguration;
+use Harryn\Jacobn\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
 
 class MailboxService
 {
@@ -114,8 +114,8 @@ class MailboxService
     {
         if (empty($this->mailboxCollection)) {
             $this->mailboxCollection = array_map(function ($mailboxId) {
-                return $this->container->getParameter("uvdesk.mailboxes.$mailboxId");
-            }, $this->container->getParameter('uvdesk.mailboxes'));
+                return $this->container->getParameter("jacobn.mailboxes.$mailboxId");
+            }, $this->container->getParameter('jacobn.mailboxes'));
         }
 
         return $this->mailboxCollection;
@@ -413,7 +413,7 @@ class MailboxService
                 'entity' =>  $thread->getTicket(),
             ]);
 
-            $this->container->get('event_dispatcher')->dispatch($event, 'uvdesk.automation.workflow.execute');
+            $this->container->get('event_dispatcher')->dispatch($event, 'jacobn.automation.workflow.execute');
         } else if (false === $ticket->getIsTrashed() && strtolower($ticket->getStatus()->getCode()) != 'spam' && !empty($mailData['inReplyTo'])) {
             $mailData['threadType'] = 'reply';
             $thread = $this->entityManager->getRepository(Thread::class)->findOneByMessageId($mailData['messageId']);
@@ -489,7 +489,7 @@ class MailboxService
                             'entity' => $ticket,
                         ]);
 
-                        $this->container->get('event_dispatcher')->dispatch($event, 'uvdesk.automation.workflow.execute');
+                        $this->container->get('event_dispatcher')->dispatch($event, 'jacobn.automation.workflow.execute');
                     }
                 }
             }
@@ -515,7 +515,7 @@ class MailboxService
             }
 
             // Trigger thread reply event
-            $this->container->get('event_dispatcher')->dispatch($event, 'uvdesk.automation.workflow.execute');
+            $this->container->get('event_dispatcher')->dispatch($event, 'jacobn.automation.workflow.execute');
         } else if (false === $ticket->getIsTrashed() && strtolower($ticket->getStatus()->getCode()) != 'spam' && empty($mailData['inReplyTo'])) {
             return [
                 'message' => "The contents of this email has already been processed.", 

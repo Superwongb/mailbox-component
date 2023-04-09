@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Utils\Imap\Transport;
+namespace Harryn\Jacobn\MailboxBundle\Utils\Imap\Transport;
 
-use Webkul\UVDesk\MailboxBundle\Utils\Imap\ConfigurationInterface;
-use Webkul\UVDesk\MailboxBundle\Utils\Imap\ResolvedConfigurationInterface;
+use Harryn\Jacobn\MailboxBundle\Utils\Imap\ConfigurationInterface;
+use Harryn\Jacobn\MailboxBundle\Utils\Imap\ResolvedConfigurationInterface;
 
 class Yahoo implements ConfigurationInterface, ResolvedConfigurationInterface
 {

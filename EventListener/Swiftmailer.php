@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\EventListener;
+namespace Harryn\Jacobn\MailboxBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\RequestStack;
-use Webkul\UVDesk\MailboxBundle\Utils\Mailbox\Mailbox;
+use Harryn\Jacobn\MailboxBundle\Utils\Mailbox\Mailbox;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Webkul\UVDesk\CoreFrameworkBundle\SwiftMailer\Event\ConfigurationRemovedEvent;
-use Webkul\UVDesk\CoreFrameworkBundle\SwiftMailer\Event\ConfigurationUpdatedEvent;
-use Webkul\UVDesk\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
-use Webkul\UVDesk\MailboxBundle\Services\MailboxService;
+use Harryn\Jacobn\CoreFrameworkBundle\SwiftMailer\Event\ConfigurationRemovedEvent;
+use Harryn\Jacobn\CoreFrameworkBundle\SwiftMailer\Event\ConfigurationUpdatedEvent;
+use Harryn\Jacobn\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
+use Harryn\Jacobn\MailboxBundle\Services\MailboxService;
 
 class Swiftmailer
 {

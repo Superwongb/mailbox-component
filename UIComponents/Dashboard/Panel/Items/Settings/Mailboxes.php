@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\UIComponents\Dashboard\Panel\Items\Settings;
+namespace Harryn\Jacobn\MailboxBundle\UIComponents\Dashboard\Panel\Items\Settings;
 
-use Webkul\UVDesk\CoreFrameworkBundle\Dashboard\Segments\PanelSidebarItemInterface;
-use Webkul\UVDesk\CoreFrameworkBundle\UIComponents\Dashboard\Panel\Sidebars\Settings;
+use Harryn\Jacobn\CoreFrameworkBundle\Dashboard\Segments\PanelSidebarItemInterface;
+use Harryn\Jacobn\CoreFrameworkBundle\UIComponents\Dashboard\Panel\Sidebars\Settings;
 
 class Mailboxes implements PanelSidebarItemInterface
 {

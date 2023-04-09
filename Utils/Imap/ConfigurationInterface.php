@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Utils\Imap;
+namespace Harryn\Jacobn\MailboxBundle\Utils\Imap;
 
 interface ConfigurationInterface
 {

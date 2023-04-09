@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle;
+namespace Harryn\Jacobn\MailboxBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
-use Webkul\UVDesk\MailboxBundle\DependencyInjection\UVDeskExtension;
-// use Webkul\UVDesk\MailboxBundle\DependencyInjection\Compilers as UVDeskMailboxCompilers;
+use Harryn\Jacobn\MailboxBundle\DependencyInjection\UVDeskExtension;
+// use Harryn\Jacobn\MailboxBundle\DependencyInjection\Compilers as UVDeskMailboxCompilers;
 
 class UVDeskMailboxBundle extends Bundle
 {

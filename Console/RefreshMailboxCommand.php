@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Console;
+namespace Harryn\Jacobn\MailboxBundle\Console;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
@@ -25,7 +25,7 @@ class RefreshMailboxCommand extends Command
 
     protected function configure()
     {
-        $this->setName('uvdesk:refresh-mailbox');
+        $this->setName('jacobn:refresh-mailbox');
         $this->setDescription('Check if any new emails have been received and process them into tickets');
 
         $this->addArgument('emails', InputArgument::IS_ARRAY | InputArgument::OPTIONAL, "Email address of the mailboxes you wish to update");
@@ -37,7 +37,7 @@ class RefreshMailboxCommand extends Command
         $router = $this->container->get('router');
         $useSecureConnection = $this->isSecureConnectionAvailable();
 
-        $router->getContext()->setHost($this->container->getParameter('uvdesk.site_url'));
+        $router->getContext()->setHost($this->container->getParameter('jacobn.site_url'));
         $router->getContext()->setScheme(false === $useSecureConnection ? 'http' : 'https');
 
         $this->endpoint = $router->generate('helpdesk_member_mailbox_notification', [], UrlGeneratorInterface::ABSOLUTE_URL);
@@ -66,7 +66,7 @@ class RefreshMailboxCommand extends Command
             $output->writeln("\n# Retrieving mailbox configuration details for <info>$mailboxEmail</info>:\n");
 
             try {
-                $mailbox = $this->container->get('uvdesk.mailbox')->getMailboxByEmail($mailboxEmail);
+                $mailbox = $this->container->get('jacobn.mailbox')->getMailboxByEmail($mailboxEmail);
 
                 if (false == $mailbox['enabled']) {
                     if (false === $input->getOption('no-interaction')) {
@@ -207,7 +207,7 @@ class RefreshMailboxCommand extends Command
     protected function isSecureConnectionAvailable()
     {
         $headers = [CURLOPT_NOBODY => true, CURLOPT_HEADER => false];
-        $curlHandler = curl_init('https://' . $this->container->getParameter('uvdesk.site_url'));
+        $curlHandler = curl_init('https://' . $this->container->getParameter('jacobn.site_url'));
 
         curl_setopt_array($curlHandler, $headers);
         curl_exec($curlHandler);

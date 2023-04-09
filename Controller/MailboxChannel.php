@@ -1,18 +1,18 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Controller;
+namespace Harryn\Jacobn\MailboxBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Webkul\UVDesk\MailboxBundle\Utils\Mailbox\Mailbox;
+use Harryn\Jacobn\MailboxBundle\Utils\Mailbox\Mailbox;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Webkul\UVDesk\MailboxBundle\Utils\MailboxConfiguration;
-use Webkul\UVDesk\MailboxBundle\Utils\Imap\Configuration as ImapConfiguration;
-use Webkul\UVDesk\MailboxBundle\Services\MailboxService;
+use Harryn\Jacobn\MailboxBundle\Utils\MailboxConfiguration;
+use Harryn\Jacobn\MailboxBundle\Utils\Imap\Configuration as ImapConfiguration;
+use Harryn\Jacobn\MailboxBundle\Services\MailboxService;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Webkul\UVDesk\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
-use Webkul\UVDesk\CoreFrameworkBundle\Services\UserService;
+use Harryn\Jacobn\CoreFrameworkBundle\SwiftMailer\SwiftMailer as SwiftMailerService;
+use Harryn\Jacobn\CoreFrameworkBundle\Services\UserService;
 
 class MailboxChannel extends AbstractController
 {

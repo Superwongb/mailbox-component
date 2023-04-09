@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\UVDesk\MailboxBundle\Utils;
+namespace Harryn\Jacobn\MailboxBundle\Utils;
 
-use Webkul\UVDesk\MailboxBundle\Utils\Mailbox\Mailbox;
+use Harryn\Jacobn\MailboxBundle\Utils\Mailbox\Mailbox;
 
 final class MailboxConfiguration
 {

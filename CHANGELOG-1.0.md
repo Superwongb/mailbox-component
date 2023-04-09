@@ -90,7 +90,7 @@ This changelog references any relevant changes introduced in 1.0 minor versions.
 * 1.0.2 (2019-10-22)
     * **Misc. Updates:**
         * Use https when available while refreshing mailboxes via CLI
-        * Updated README.md with link to the official gitter chat for uvdesk/mailbox-component
+        * Updated README.md with link to the official gitter chat for jacobn/mailbox-component
 
 * 1.0.1 (2019-10-15)
     * **Misc. Updates:**
@@ -107,17 +107,17 @@ This changelog references any relevant changes introduced in 1.0 minor versions.
     * **Issue #35:** update template emailSettings.html (raised by vaishaliwebkul)
     * **Issue #31:** Mailbox fields missing when edit mailbox for imap transport (raised by vaishaliwebkul)
     * **Issue #15:** Swiftmailer gets deleted for setup mailbox (raised by vaishaliwebkul)
-    * **Issue #16:** updated swiftmailer id not update into uvdesk.yaml (raised by vaishaliwebkul)
+    * **Issue #16:** updated swiftmailer id not update into jacobn.yaml (raised by vaishaliwebkul)
     * **Issue #33:** Confirm box must be appear while deleting a mailbox configuration (raised by vaishaliwebkul)
-    * **Issue #30:** uvdesk.yml file update and issues (raised by kumarSaurabh27)
+    * **Issue #30:** jacobn.yml file update and issues (raised by kumarSaurabh27)
     * **Issue #22:** Swiftmailer update with blank mailer_id (raised by vaishaliwebkul)
     * **Issue #10:** Define maximum character length of mailbox name (raised by vaishaliwebkul)
     * **Issue #20:** Port not define for mailbox when set transport as IMAP (raised by vaishaliwebkul)
     * **Issue #27:** Resolve issue(thread was not creating) while creating the ticket via … (raised by papnoisanjeev)
     * **Issue #26:** Feature added to show progress in Mailbox refresh command and Issues. (raised by kumarSaurabh27)
-    * **Issue #24:** Update Prefix in uvdesk.yaml (raised by vaishaliwebkul)
+    * **Issue #24:** Update Prefix in jacobn.yaml (raised by vaishaliwebkul)
     * **Issue #18:** yahoo configuration issue with user password  (raised by vaishaliwebkul)
-    * **Issue #13:** Default site url set when update uvdesk.yaml[email settings] (raised by vaishaliwebkul)
+    * **Issue #13:** Default site url set when update jacobn.yaml[email settings] (raised by vaishaliwebkul)
     * **Issue #23:** mailbox-component issue-10 (raised by kumarSaurabh27)
     * **Issue #9:** Mailbox id not accept integer values  (raised by vaishaliwebkul)
     * **Issue #12:** Error while deleting swiftmailer (raised by vaishaliwebkul)
